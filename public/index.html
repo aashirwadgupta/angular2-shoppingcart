@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<base href="/">
+<title>AngularJS Basic Example</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="lib/css/bootstrap.min.css" />
+<link rel="stylesheet" href="lib/css/animate.css" />
+
+<script type='text/javascript' src="lib/jQuery.min.js" charset="UTF-8"></script>
+<script type='text/javascript' src="lib/moment.min.js" charset="UTF-8"></script>
+<script type='text/javascript' src="lib/lodash.min.js" charset="UTF-8"></script>
+<script type='text/javascript' src="lib/angular.min.js" charset="UTF-8"></script>
+<script type='text/javascript'
+	src="lib/angular-sanitize/angular-sanitize.min.js" charset="UTF-8"></script>
+<script type='text/javascript' src="lib/ng-table.min.js" charset="UTF-8"></script>
+<script type='text/javascript' src="lib/angular-ui-router.min.js"
+	charset="UTF-8"></script>
+<script type='text/javascript' src="lib/ngStorage.min.js"
+	charset="UTF-8"></script>
+<script type='text/javascript' src="lib/vertical.js" charset="UTF-8"></script>
+
+<script type='text/javascript' src="app.js" charset="UTF-8"></script>
+<script type='text/javascript' src="app/app.controller.js"
+	charset="UTF-8"></script>
+<script type='text/javascript' src="app/cart/cart.controller.js"
+	charset="UTF-8"></script>
+<script type='text/javascript' src="app/item/item.controller.js"
+	charset="UTF-8"></script>
+<script type='text/javascript' src="app/item/itemDetails.controller.js"
+	charset="UTF-8"></script>
+<script type='text/javascript' src="app/order/order.controller.js"
+	charset="UTF-8"></script>
+<script type='text/javascript' src="app/profile/profile.controller.js"
+	charset="UTF-8"></script>
+<link rel="stylesheet" href="lib/css/ng-table.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div style="text-align: center;" class="col-xs-12">
+				<h1>Shopping Cart Application</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+					<div class="list-group">
+						<a ui-sref="items" class="list-group-item text-center" title="Items">
+							<h4 class="glyphicon glyphicon-gift"></h4>
+							<br />Items
+						</a>
+						<a ui-sref="order" class="list-group-item text-center" title="Order History">
+								<h4 class="glyphicon glyphicon-briefcase"></h4>
+							<br />Order History
+						</a>
+						<a ui-sref="profile" class="list-group-item text-center" title="Profile">
+							<h4 class="glyphicon glyphicon-user"></h4>
+							<br />Profile
+						</a>
+						<a ui-sref="cart" class="list-group-item text-center" title="Cart">
+							<h4 class="glyphicon glyphicon-shopping-cart"></h4>
+							<br />Cart
+						</a>
+					</div>
+			</div>
+			<div style="text-align: center;"  class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+				<div ui-view=""></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<div class="row" ng-controller="ItemCtrl" ng-init="init()">
+	<div style="text-align: center;" class="col-xs-12">
+		<h1>Item Details</h1>
+	</div>
+	<div class="row" class="col-md-9">
+	</div>
+	<div class="row" class="col-md-9">
+		<table ng-table="itemsTable" class="table table-striped">
+			<tr ng-repeat="item in data">
+				<td data-title="'Item Number'">{{item.id}}</td>
+				<td data-title="'Name'">{{item.itemName}}</td>
+				<td data-title="'Category'">{{item.category.categoryMake}}</td>
+				<td data-title="'Price'">{{item.price}}</td>
+				<td data-title="'Get Details'"><button ng-click="getItemDetails(item)">Get Details</button></td>
+			</tr>
+		</table>
+	</div>
+	<div class="row panel" ng-if="itemDetail" ng-model="itemDetail">
+	<div class="col-md-3">
+		<img src="images/product.jpg"></img></div>
+		<div class="col-md-9">
+			<h1>{{itemDetail.itemName}}</h1>
+			<p>{{itemDetail.itemDesc}}</p>
+			<p>{{itemDetail.category.categoryMake}}</p>
+			<p>{{itemDetail.price | currency}}</p>
+			<input ng-model="emailId" placeholder="Your Email Address"></input><button ng-disabled="!itemDetail.available && !emailFlag" ng-click="addItemToCart(itemDetail, 1)">Buy Now</button>
+			<h4>Item Sold by - {{itemDetail.sellerInfo}}</h4>
+		</div>
+	</div>
+</div>

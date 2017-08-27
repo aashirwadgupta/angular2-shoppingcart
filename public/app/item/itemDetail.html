@@ -1,0 +1,14 @@
+<div class="row" ng-controller="ItemDetailsCtrl" ng-init="getItemDetails()">
+	<div style="text-align: center;" class="col-xs-12">
+		<h1>Item Details</h1>
+	</div>
+	<div class="row">
+		<p>{{item.id}}</p>
+		<p>{{item.itemName}}</p>
+		<p>{{item.itemDesc}}</p>
+		<p>{{item.category.categoryMake}}</p>
+		<p>{{item.price}}</p>
+		<p>{{item.available}}</p>
+		<p>{{item.sellerInfo}}</p>
+	</div>
+</div>
