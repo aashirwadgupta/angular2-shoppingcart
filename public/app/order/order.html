@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" ng-Controller="OrderCtrl" ng-init="init()">
     <div style="text-align: center;" class="col-xs-12">
       <h1>Order Controller</h1>
     </div>
@@ -9,12 +9,6 @@
 				class="form-control" placeholder="Email" ng-model="emailId" name="email" type="email"
 				required="" autofocus="">
 		</div>
-		<!-- <div class="form-group input-group">
-			<span class="input-group-addon"> <i
-				class="glyphicon glyphicon-lock"> </i>
-			</span> <input class="form-control" placeholder="Password" name="password"
-				type="password" value="" required="">
-		</div> -->
 		<div class="form-group">
 			<button ng-click="checkEmail(emailId)" class="btn btn-primary btn-block">
 				Access</button>
@@ -22,10 +16,32 @@
 	</div>
 
 	<div class="row" ng-if="emailFlag">
-		<p class="text-info">
-			Thanks for shopping at the Shopping Cart Application.<br /> This is
-			your shopping cart. Here you can edit the items, go back to the
-			store, clear the cart, or check out.
-		</p>
+	<div ng-if="!orders">You Currently Do not have any orders</div>
+	<div ng-if="orders">
+		<h4 class="text-info">Below is your order summary</h4>
+		<table class="table table-bordered">
+
+						<!-- header -->
+						<tr class="well">
+							<td><b>Order Id</b></td>
+							<td><b>Item Name</b></td>
+							<td><b>Item Price</b></td>
+							<td><b>Quantity</b></td>
+							<td><b>Tracking Id</b></td>
+							<td><b>Delivery Address</b></td>
+						</tr>
+
+						<!-- cart items -->
+						<tr ng-repeat="order in orders">
+							<td>{{order.orderId}}</td>
+							<td>{{order.item.itemName}}</td>
+							<td>{{order.item.price}}</td>
+							<td>{{order.quantity}}</td>
+							<td>{{order.trackingId}}</td>
+							<td>{{order.deliveryAddress}}</td>
+						</tr>
+					</table>
+	</div>
+		
 	</div>
  </div>

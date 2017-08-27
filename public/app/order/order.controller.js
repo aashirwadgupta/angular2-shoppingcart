@@ -8,6 +8,7 @@ myApp.controller('OrderCtrl', function($scope, $http, $rootScope, $localStorage)
 			$http.get("http://localhost:8080/getMyOrders?userId="+emailId).
 			  then(function(response) {
 				    console.log(response);
+				    $scope.orders = response.data;
 				  }, function(response) {
 				    // called asynchronously if an error occurs
 				    // or server returns response with an error status.
