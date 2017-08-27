@@ -40,45 +40,28 @@
 							<td><b>Item</b></td>
 							<td class="tdCenter"><b>Quantity</b></td>
 							<td class="tdRight"><b>Price</b></td>
-							<td />
 						</tr>
 
 						<!-- empty cart message -->
-						<tr ng-hide="cart.getTotalCount() > 0">
+						<tr ng-if="!cart.itemMap">
 							<td class="tdCenter" colspan="4">Your cart is empty.</td>
 						</tr>
 
 						<!-- cart items -->
-						<tr ng-repeat="(key, value) in cart.itemMap | orderBy:'name'">
+						<tr ng-repeat="(key, value) in cart.itemMap">
 							<td>{{value.item.itemName}}</td>
 							<td class="tdCenter">
-								<div class="input-append">
-									<!-- use type=tel instead of  to prevent spinners -->
-									<input class="span3 text-center" type="tel"
-										ng-model="value.quantity" ng-change="cart.saveItems()" />
-									<button class="btn btn-success" type="button"
-										ng-disabled="value.quantity >= 1000"
-										ng-click="cart.addItem(item.sku, item.name, item.price, +1)">+</button>
-									<button class="btn btn-inverse" type="button"
-										ng-disabled="value.quantity <= 1"
-										ng-click="cart.addItem(item.sku, item.name, item.price, -1)">-</button>
+								<div class="input-append">{{value.quantity}}
 								</div>
 							</td>
 							<td class="tdRight">{{value.item.price * value.quantity |
 								currency}}</td>
-							<td class="tdCenter" title="remove from cart"><a href=""
-								ng-click="cart.addItem(item.sku, item.name, item.price, -10000000)">
-									<i class="icon-remove" />
-							</a></td>
 						</tr>
 
 						<!-- footer -->
 						<tr class="well">
 							<td><b>Total</b></td>
-							<td class="tdCenter"><b>{{cart.getTotalCount()}}</b></td>
-							<td class="tdRight"><b>{{cart.getTotalPrice() |
-									currency}}</b></td>
-							<td />
+							<td>{{totalPrice | currency}}</td>
 						</tr>
 					</table>
 				</div>

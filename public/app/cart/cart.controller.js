@@ -9,7 +9,13 @@ myApp.controller('CartCtrl', function($scope, $http, $rootScope, $localStorage) 
 			$http.get("http://localhost:8080/getCart?userId="+emailId).
 			  then(function(response) {
 				    console.log(response);
-				    $scope.cart = response.data;
+				    var price = 0;
+				    $scope.cart = response.data;				    
+				    angular.forEach($scope.cart.itemMap , function(value, key) {
+				    	console.log(value.item);
+				    		price = price + parseInt(value.item.price)*parseInt(value.quantity);
+				    });
+				    $scope.totalPrice = price;
 				  }, function(response) {
 				  });
 		}
