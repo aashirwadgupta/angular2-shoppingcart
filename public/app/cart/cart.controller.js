@@ -9,7 +9,7 @@ myApp.controller('CartCtrl', function($scope, $http, $rootScope, $localStorage) 
 			$http.get("http://localhost:8080/getCart?userId="+emailId).
 			  then(function(response) {
 				    console.log(response);
-				    $scope.seeMyCart();
+				    $scope.cart = response.data;
 				  }, function(response) {
 				  });
 		}

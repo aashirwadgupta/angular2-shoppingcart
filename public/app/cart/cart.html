@@ -44,7 +44,7 @@
 						</tr>
 
 						<!-- empty cart message -->
-						<tr ng-hide="seeMyCart() > 0">
+						<tr ng-hide="cart.getTotalCount() > 0">
 							<td class="tdCenter" colspan="4">Your cart is empty.</td>
 						</tr>
 
