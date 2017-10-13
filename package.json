@@ -1,7 +1,7 @@
 {
-  "name": "ShoppingCartApp",
+  "name": "ToDoApp",
   "version": "0.0.1",
-  "description": "A Node.js Shopping Cart App using express",
+  "description": "A Node.js and Angular js To Do application using express",
   "dependencies": {
 	"express": "*"
    },

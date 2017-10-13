@@ -24,13 +24,7 @@
 <script type='text/javascript' src="app.js" charset="UTF-8"></script>
 <script type='text/javascript' src="app/app.controller.js"
 	charset="UTF-8"></script>
-<script type='text/javascript' src="app/cart/cart.controller.js"
-	charset="UTF-8"></script>
-<script type='text/javascript' src="app/item/item.controller.js"
-	charset="UTF-8"></script>
-<script type='text/javascript' src="app/item/itemDetails.controller.js"
-	charset="UTF-8"></script>
-<script type='text/javascript' src="app/order/order.controller.js"
+<script type='text/javascript' src="app/todo/todo.controller.js"
 	charset="UTF-8"></script>
 <script type='text/javascript' src="app/profile/profile.controller.js"
 	charset="UTF-8"></script>
@@ -38,36 +32,21 @@
 </head>
 <body>
 	<div class="container">
+	 <div class="jumbotron">
 		<div class="row">
 			<div style="text-align: center;" class="col-xs-12">
-				<h1>Shopping Cart Application</h1>
+				<h1>Task ToDo Application</h1>
 			</div>
+		</div>
+		<div style="text-align: center; height: 400px" class="row">
+			<div ui-view="" class=""></div>
 		</div>
 		<div class="row">
-			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-					<div class="list-group">
-						<a ui-sref="items" class="list-group-item text-center" title="Items">
-							<h4 class="glyphicon glyphicon-gift"></h4>
-							<br />Items
-						</a>
-						<a ui-sref="order" class="list-group-item text-center" title="Order History">
-								<h4 class="glyphicon glyphicon-briefcase"></h4>
-							<br />Order History
-						</a>
-						<a ui-sref="profile" class="list-group-item text-center" title="Profile">
-							<h4 class="glyphicon glyphicon-user"></h4>
-							<br />Profile
-						</a>
-						<a ui-sref="cart" class="list-group-item text-center" title="Cart">
-							<h4 class="glyphicon glyphicon-shopping-cart"></h4>
-							<br />Cart
-						</a>
-					</div>
-			</div>
-			<div style="text-align: center;"  class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-				<div ui-view=""></div>
+			<div style="text-align: center;" class="col-xs-12">
+				<h3>Developed as a hobyy project by Aashirwad Gupta</h3>
 			</div>
 		</div>
+	</div>
 	</div>
 </body>
 </html>
